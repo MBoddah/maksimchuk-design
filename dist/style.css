@@ -1,5 +1,71 @@
-.test-bundle {
-  color: red; }
-  .test-bundle:hover {
-    color: green; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  background-color: #eee; }
+
+.header {
+  height: 21vh;
+  background-color: white; }
+  .header__row {
+    width: 100%;
+    display: flex; }
+  .header__wrapper {
+    display: flex;
+    padding: 30px;
+    width: 100%;
+    flex-direction: row; }
+
+.logo {
+  display: flex;
+  height: 100px;
+  width: 60%; }
+  .logo__img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%; }
+  .logo__text {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column; }
+  .logo__headtext {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #000; }
+  .logo__subtext {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1.5;
+    color: #000; }
+
+.menu {
+  margin-right: 5%;
+  display: flex;
+  width: 40%;
+  align-items: center;
+  justify-content: flex-end; }
+  .menu__item {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #111;
+    margin: 10px;
+    text-decoration: none; }
+    .menu__item:hover {
+      color: #d62e2e; }
+
+.slider {
+  height: 79vh; }
+  .slider__wrapper {
+    overflow: hidden;
+    height: 100%; }
+  .slider .slide {
+    width: 100%;
+    object-fit: cover; }
 

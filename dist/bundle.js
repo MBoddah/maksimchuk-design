@@ -16,17 +16,17 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/common */ \"./src/js/common.js\");\n/* harmony import */ var _js_common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_common__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/main.scss */ \"./src/scss/main.scss\");\n\n\n\n//# sourceURL=webpack://maksimchuk-design/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/slider */ \"./src/js/slider.js\");\n/* harmony import */ var _js_slider__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_slider__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/main.scss */ \"./src/scss/main.scss\");\n\n\n\n//# sourceURL=webpack://maksimchuk-design/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/js/common.js":
+/***/ "./src/js/slider.js":
 /*!**************************!*\
-  !*** ./src/js/common.js ***!
+  !*** ./src/js/slider.js ***!
   \**************************/
 /***/ (() => {
 
-eval("let add = (a, b) => a + b;\n\nconsole.log(add('Hello', ' world!'));\n\n//# sourceURL=webpack://maksimchuk-design/./src/js/common.js?");
+eval("const slide = document.querySelector('.slide');\nlet i = 0;\nconst rollup = setInterval(() => {\n  slide.style.transform = `translateY(${-i * 0.05}px)`;\n  i++;\n  if (i == 20000) clearInterval(rollup);\n}, 5);\n\n//# sourceURL=webpack://maksimchuk-design/./src/js/slider.js?");
 
 /***/ }),
 
