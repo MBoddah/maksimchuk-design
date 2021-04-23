@@ -7,6 +7,7 @@ html {
   background-color: #eee; }
 
 .header {
+  position: relative;
   height: 21vh;
   background-color: white; }
   .header__row {
@@ -14,7 +15,7 @@ html {
     display: flex; }
   .header__wrapper {
     display: flex;
-    padding: 30px;
+    padding: 20px 30px;
     width: 100%;
     flex-direction: row; }
 
@@ -23,37 +24,34 @@ html {
   height: 100px;
   width: 60%; }
   .logo__img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 100%; }
   .logo__text {
     margin-left: 15px;
     display: flex;
     flex-direction: column; }
   .logo__headtext {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 44px;
-    font-weight: bold;
-    line-height: 1.5;
-    color: #000; }
+    font-family: 'Teko', sans-serif;
+    font-size: 54px;
+    font-weight: 500;
+    color: #111; }
   .logo__subtext {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 20px;
+    font-family: 'Teko', sans-serif;
+    font-size: 24px;
     font-weight: 200;
-    line-height: 1.5;
-    color: #000; }
+    color: #111; }
 
 .menu {
-  margin-right: 5%;
+  margin-right: 3%;
   display: flex;
   width: 40%;
   align-items: center;
   justify-content: flex-end; }
   .menu__item {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.5;
+    font-family: 'Teko', sans-serif;
+    font-size: 28px;
+    font-weight: 200;
     color: #111;
     margin: 10px;
     text-decoration: none; }
@@ -61,11 +59,93 @@ html {
       color: #d62e2e; }
 
 .slider {
+  z-index: 2;
   height: 79vh; }
   .slider__wrapper {
+    position: relative;
     overflow: hidden;
     height: 100%; }
-  .slider .slide {
+  .slider__slide {
     width: 100%;
     object-fit: cover; }
+  .slider__overlay {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); }
+  .slider__headtext {
+    font-family: 'Teko', sans-serif;
+    font-size: 64px;
+    font-weight: 200;
+    color: #111;
+    color: white;
+    margin: 3%; }
+
+.about {
+  position: relative;
+  z-index: 2;
+  padding: 10%;
+  background-color: #fff; }
+  .about__wrapper {
+    z-index: 2;
+    display: flex;
+    flex-direction: row; }
+  .about__portrait {
+    width: 20%;
+    border-radius: 50%; }
+  .about__text {
+    font-family: 'Teko', sans-serif;
+    font-size: 30px;
+    font-weight: 100;
+    color: #111;
+    margin-left: 5%;
+    color: #555; }
+
+.separator {
+  position: relative;
+  height: 40vh; }
+  .separator__img {
+    position: relative;
+    width: 100%;
+    object-fit: cover; }
+  .separator__overlay {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); }
+  .separator__text {
+    font-family: 'Teko', sans-serif;
+    font-size: 70px;
+    font-weight: 400;
+    color: #111;
+    color: #fff;
+    position: absolute;
+    bottom: 5%;
+    left: 5%; }
+
+.portfolio {
+  position: relative;
+  background-color: white; }
+  .portfolio__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px; }
+  .portfolio__column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px; }
+  .portfolio__item {
+    width: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+    object-fit: cover;
+    margin-top: 8px; }
 

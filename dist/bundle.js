@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_
   \**************************/
 /***/ (() => {
 
-eval("const slide = document.querySelector('.slide');\nlet i = 0;\nconst rollup = setInterval(() => {\n  slide.style.transform = `translateY(${-i * 0.05}px)`;\n  i++;\n  if (i == 20000) clearInterval(rollup);\n}, 5);\n\n//# sourceURL=webpack://maksimchuk-design/./src/js/slider.js?");
+eval("const slide = document.querySelector('.slider__slide');\nlet i = 0;\nconst rollup = setInterval(() => {\n  slide.style.transform = `translateY(${-i * 0.05}px)`;\n  i++;\n  if (i == 20000) clearInterval(rollup);\n}, 5);\nconst background = document.querySelector('.separator__img');\nconsole.log(window.screen.height);\ndocument.addEventListener('scroll', () => {\n  if (background.getBoundingClientRect().top < window.screen.height) {\n    background.style.transform = `translateY(-${(window.pageYOffset - background.getBoundingClientRect().top) / 4}px)`;\n  }\n});\n\n//# sourceURL=webpack://maksimchuk-design/./src/js/slider.js?");
 
 /***/ }),
 
