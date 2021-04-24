@@ -5,7 +5,7 @@
 }
 
 html {
-    background-color: #eee
+    background-color: #fff;
 }
 
 @mixin main-font($size, $weight) {
@@ -177,18 +177,83 @@ html {
         padding: 0 4px;
     }
 
-    &__item{
+    &__container{
         width: 100%;
         vertical-align: middle;
-        object-fit: cover;
-        object-fit: cover;
-        margin-top: 8px;
+        margin: 8px 0;
+        overflow: hidden;
     }
 
+    &__item{
+        transition: all 2s;
+        display: block;
+        width: 100%;
+
+        &:hover{
+            transition: all 6s;
+            transform: scale(1.2);
+        }
+    }
 }
-// z-index: 2;
-// background-color: #fff;
-// position: absolute;
-// width: 100%;
-// height: 500px;
-// top: 40vh;
+
+.form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 5% auto;
+    background-color: #eee;
+
+    &__transparent{
+        width: 100%;
+        position: relative;
+        padding: 60px 30%;
+        background-size: cover;
+        background-image:  url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/36628d68919009.5b6db5d9de094.png);
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba($color: #000000, $alpha: .4);
+        }
+    }
+
+    &__wrapper{
+        display: flex;
+        position: relative;
+        flex-direction: column;       
+    }
+
+    &__title{
+        @include main-font(70px, 400);
+        color: #fff;
+    }
+
+    &__text{
+        @include main-font(32px, 100);
+        color: rgba(255, 255, 255, .6);
+    }
+
+    &__input{
+        @include main-font(26px, 100);
+        padding: 0 15px;
+        outline: none;
+        border-width: 0;
+        line-height: 40px;
+        border-radius: 20px;
+        color: white;
+        background: rgba(255, 255, 255, .3);
+    }
+
+    #form__submit{
+        @include main-font(26px, 100);
+        margin-top: 30px;
+        outline: none;
+        border-width: 0;
+        line-height: 40px;
+        border-radius: 20px;
+        background: #fff;
+    }
+}
