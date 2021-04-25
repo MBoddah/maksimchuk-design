@@ -4,7 +4,8 @@
   box-sizing: border-box; }
 
 html {
-  background-color: #fff; }
+  background-color: #fff;
+  overflow-x: hidden; }
 
 .header {
   position: relative;
@@ -164,7 +165,10 @@ html {
   .form__transparent {
     width: 100%;
     position: relative;
-    padding: 60px 30%;
+    padding: 60px 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background-size: cover;
     background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/36628d68919009.5b6db5d9de094.png); }
     .form__transparent::before {
@@ -175,17 +179,32 @@ html {
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.4); }
+  .form__text {
+    transform: translateX(-900px);
+    transition: all 1.5s;
+    z-index: 2;
+    width: 50%;
+    display: flex;
+    font-family: 'Teko', sans-serif;
+    font-size: 42px;
+    font-weight: 100;
+    color: #111;
+    color: rgba(255, 255, 255, 0.9); }
   .form__wrapper {
+    transform: translateX(900px);
+    transition: all 1.5s;
+    width: 50%;
     display: flex;
     position: relative;
-    flex-direction: column; }
+    flex-direction: column;
+    margin-left: 5%; }
   .form__title {
     font-family: 'Teko', sans-serif;
     font-size: 70px;
     font-weight: 400;
     color: #111;
     color: #fff; }
-  .form__text {
+  .form__label {
     font-family: 'Teko', sans-serif;
     font-size: 32px;
     font-weight: 100;
@@ -214,4 +233,55 @@ html {
     line-height: 40px;
     border-radius: 20px;
     background: #fff; }
+
+.socials {
+  display: flex;
+  justify-items: center;
+  width: 100%;
+  position: relative;
+  padding: 0 10%;
+  margin-top: 5%; }
+  .socials__wrapper {
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .socials__title {
+    font-family: 'Teko', sans-serif;
+    font-size: 70px;
+    font-weight: 400;
+    color: #111; }
+  .socials__row {
+    z-index: 1;
+    margin-top: 2%;
+    transform: translateY(200%);
+    transition: all 1.5s; }
+  .socials__link {
+    font-family: 'Teko', sans-serif;
+    font-size: 45px;
+    font-weight: 200;
+    color: #111;
+    margin: 10px;
+    text-decoration: none; }
+    .socials__link:hover {
+      color: #d62e2e; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  padding: 2%;
+  position: relative;
+  z-index: 2;
+  background-color: black;
+  font-family: 'Teko', sans-serif;
+  font-size: 32px;
+  font-weight: 200;
+  color: #111;
+  color: #fff; }
+
+.show-in {
+  transform: translateY(0);
+  transform: translateX(0); }
 

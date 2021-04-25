@@ -6,6 +6,7 @@
 
 html {
     background-color: #fff;
+    overflow-x: hidden;
 }
 
 @mixin main-font($size, $weight) {
@@ -47,7 +48,6 @@ html {
     display: flex;
     height: 100px;
     width: 60%;
-
     &__img {
         width: 120px;
         height: 120px;
@@ -75,7 +75,6 @@ html {
     width: 40%;
     align-items: center;
     justify-content: flex-end;
-
     &__item{
         @include main-font(28px, 200);
         margin: 10px;
@@ -90,7 +89,6 @@ html {
 .slider {
     z-index: 2;
     height: 79vh;
-
     &__wrapper{
         position: relative;
         overflow: hidden;
@@ -118,7 +116,6 @@ html {
     z-index: 2;
     padding: 10%;
     background-color: #fff;
-
     &__wrapper{
         z-index: 2;
         display: flex;
@@ -206,7 +203,10 @@ html {
     &__transparent{
         width: 100%;
         position: relative;
-        padding: 60px 30%;
+        padding: 60px 10%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         background-size: cover;
         background-image:  url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/36628d68919009.5b6db5d9de094.png);
         &::before{
@@ -220,10 +220,24 @@ html {
         }
     }
 
+    &__text{
+        transform: translateX(-900px);
+        transition: all 1.5s;
+        z-index: 2;
+        width: 50%;
+        display: flex;
+        @include main-font(42px, 100);
+        color: rgba($color: #fff, $alpha: .9);
+    }
+
     &__wrapper{
+        transform: translateX(900px);
+        transition: all 1.5s;
+        width: 50%;
         display: flex;
         position: relative;
-        flex-direction: column;       
+        flex-direction: column;    
+        margin-left: 5%;   
     }
 
     &__title{
@@ -231,7 +245,7 @@ html {
         color: #fff;
     }
 
-    &__text{
+    &__label{
         @include main-font(32px, 100);
         color: rgba(255, 255, 255, .6);
     }
@@ -256,4 +270,58 @@ html {
         border-radius: 20px;
         background: #fff;
     }
+}
+
+.socials{
+    display: flex;
+    justify-items: center;
+    width: 100%;
+    position: relative; 
+    padding: 0 10%;
+    margin-top: 5%;;
+    &__wrapper{
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title{
+        @include main-font(70px, 400);
+    }
+
+    &__row{
+        z-index: 1;
+        margin-top: 2%;
+        transform: translateY(200%);
+        transition: all 1.5s;
+    }
+
+    &__link{
+        @include main-font(45px, 200);
+        margin: 10px;
+        text-decoration: none;
+
+        &:hover {
+            color: rgb(214, 46, 46);
+        }
+    }
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    padding: 2%;
+    position: relative;
+    z-index: 2;
+    background-color: black;
+    @include main-font(32px, 200);
+    color: #fff;
+}
+
+.show-in{
+    transform: translateY(0);
+    transform: translateX(0);
 }
