@@ -1,5 +1,6 @@
 
 # dependencies
+/backup
 /node_modules
 /.pnp
 .pnp.js

@@ -64,9 +64,16 @@ html {
   height: 79vh; }
   .slider__wrapper {
     position: relative;
-    overflow: hidden;
+    width: 100%;
     height: 100%; }
   .slider__slide {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 79vh;
+    object-fit: cover; }
+  .slider__slide img {
+    height: auto;
     width: 100%;
     object-fit: cover; }
   .slider__overlay {
@@ -78,13 +85,76 @@ html {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.4); }
-  .slider__headtext {
+  .slider__text {
     font-family: 'Teko', sans-serif;
     font-size: 64px;
     font-weight: 200;
     color: #111;
     color: white;
     margin: 3%; }
+  .slider__indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none; }
+  .slider__dot {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 6px;
+    margin-right: 3px;
+    margin-left: 3px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease; }
+  .slider__next {
+    display: flex;
+    border-radius: 50%;
+    position: absolute;
+    top: 57%;
+    height: 100px;
+    width: 50px;
+    left: 85px; }
+    .slider__next img {
+      transition: all .3s;
+      opacity: .4;
+      height: 100%;
+      width: 100%;
+      margin: auto; }
+      .slider__next img:hover {
+        opacity: .6; }
+      .slider__next img:active {
+        opacity: .9;
+        transform: scale(0.96); }
+  .slider__prev {
+    display: flex;
+    border-radius: 50%;
+    position: absolute;
+    top: 57%;
+    height: 100px;
+    width: 50px;
+    left: 30px; }
+    .slider__prev img {
+      transition: all .3s;
+      opacity: .4;
+      height: 100%;
+      width: 100%;
+      margin: auto; }
+      .slider__prev img:hover {
+        opacity: .6; }
+      .slider__prev img:active {
+        opacity: .9;
+        transform: scale(0.96); }
 
 .about {
   position: relative;
