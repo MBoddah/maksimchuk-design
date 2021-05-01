@@ -166,6 +166,7 @@ body {
             height: 100%;
             width: 100%;
             margin: auto;
+            cursor: pointer;
 
             &:hover {
                 opacity: .6;
@@ -193,6 +194,7 @@ body {
             height: 100%;
             width: 100%;
             margin: auto;
+            cursor: pointer;
             
             &:hover {
                 opacity: .6;
@@ -280,6 +282,7 @@ body {
         transition: all 2s;
         display: block;
         width: 100%;
+        cursor: pointer;
 
         &:hover{
             transition: all 6s;
@@ -354,6 +357,7 @@ body {
         border-radius: 20px;
         color: white;
         background: rgba(255, 255, 255, .3);
+        cursor: pointer;
     }
 
     #form__submit{
@@ -364,6 +368,7 @@ body {
         line-height: 40px;
         border-radius: 20px;
         background: #fff;
+        cursor: pointer;
     }
 }
 
