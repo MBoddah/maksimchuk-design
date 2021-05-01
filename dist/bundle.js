@@ -16,7 +16,7 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/slider */ \"./src/js/slider.js\");\n/* harmony import */ var _js_slider__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_slider__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/common */ \"./src/js/common.js\");\n/* harmony import */ var _js_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_common__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scss/main.scss */ \"./src/scss/main.scss\");\n\n\n\n\n//# sourceURL=webpack://maksimchuk-design/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/slider */ \"./src/js/slider.js\");\n/* harmony import */ var _js_slider__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_slider__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_portfolio__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/portfolio */ \"./src/js/portfolio.js\");\n/* harmony import */ var _js_portfolio__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_portfolio__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _js_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/common */ \"./src/js/common.js\");\n/* harmony import */ var _js_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_common__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scss/main.scss */ \"./src/scss/main.scss\");\n\n\n\n\n\n//# sourceURL=webpack://maksimchuk-design/./src/index.js?");
 
 /***/ }),
 
@@ -27,6 +27,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_
 /***/ (() => {
 
 eval("const background = document.querySelector('.separator__img');\nconst form = document.querySelector('.form');\nconst formText = document.querySelector('.form__text');\nconst formBody = document.querySelector('.form__wrapper');\nconst socials = document.querySelector('.socials');\nconst socialsList = document.querySelector('.socials__row');\ndocument.addEventListener('scroll', () => {\n  if (background.getBoundingClientRect().top < window.screen.height) {\n    background.style.transform = `translateY(-${(window.pageYOffset - background.getBoundingClientRect().top) / 4}px)`;\n  }\n\n  if (form.getBoundingClientRect().top + 300 < window.screen.height) {\n    formText.classList.add('show-in');\n    formBody.classList.add('show-in');\n  } else {\n    formText.classList.remove('show-in');\n    formBody.classList.remove('show-in');\n  }\n\n  if (socials.getBoundingClientRect().top + 300 < window.screen.height) {\n    socialsList.classList.add('show-in');\n  } else {\n    socialsList.classList.remove('show-in');\n  }\n});\n\n//# sourceURL=webpack://maksimchuk-design/./src/js/common.js?");
+
+/***/ }),
+
+/***/ "./src/js/portfolio.js":
+/*!*****************************!*\
+  !*** ./src/js/portfolio.js ***!
+  \*****************************/
+/***/ (() => {
+
+eval("function portfolio() {\n  document.querySelectorAll('.portfolio__container img').forEach(img => {\n    img.addEventListener('click', () => {\n      showInModal(img);\n    });\n  });\n\n  function showInModal(img) {\n    const modal = document.querySelector('.modal'),\n          content = document.querySelector('.modal__content'),\n          wrapper = document.querySelector('.modal__wrapper');\n    modal.style.display = 'flex';\n    document.body.style.overflow = 'hidden';\n    content.innerHTML = `\n            <img src=\"${img.src}\" alt=\"\" class=\"modal__image\">\n        `;\n    console.log(content.children[0].width);\n    wrapper.style.width = `${content.children[0].width}px`;\n    document.querySelector('.modal__close').addEventListener('click', () => {\n      closeModal(modal);\n    });\n  }\n\n  function closeModal(modal) {\n    modal.style.display = 'none';\n    document.body.style.overflow = '';\n  }\n}\n\nportfolio();\n\n//# sourceURL=webpack://maksimchuk-design/./src/js/portfolio.js?");
 
 /***/ }),
 
