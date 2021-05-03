@@ -254,10 +254,18 @@ body {
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.4); }
+  .form__transparent._sending::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6) url(http://www.u106747.test-handyhost.ru/img/icons/form-spinner.svg) center no-repeat; }
   .form__text {
     transform: translateX(-900px);
     transition: all 1.5s;
-    z-index: 2;
     width: 50%;
     display: flex;
     font-family: 'Teko', sans-serif;
@@ -290,6 +298,7 @@ body {
     font-size: 26px;
     font-weight: 100;
     color: #111;
+    transition: all .5s;
     padding: 0 15px;
     outline: none;
     border-width: 0;
@@ -298,6 +307,10 @@ body {
     color: white;
     background: rgba(255, 255, 255, 0.3);
     cursor: pointer; }
+  .form__input._error {
+    box-shadow: 0 0 10px red; }
+  .form textarea.form__input {
+    resize: vertical; }
   .form #form__submit {
     font-family: 'Teko', sans-serif;
     font-size: 26px;
