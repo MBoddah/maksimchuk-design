@@ -49,7 +49,7 @@ function slider( {
         arrowPrev = document.querySelector(bodSelectors.prevArrowSelector) || createSliderElement(slidesWrapper, bodSelectors.prevArrowSelector),
         arrowNext = document.querySelector(bodSelectors.nextArrowSelector) || createSliderElement(slidesWrapper , bodSelectors.nextArrowSelector);
 
-    sliderInner.style.width = slides.length * 100 + '%';        
+        sliderInner.style.width = slides.length * 100 + '%';        
     sliderInner.style.display = 'flex';
     sliderInner.style.transition = '.5s all';
     slidesWrapper.style.overflow = 'hidden';
@@ -121,6 +121,9 @@ function slider( {
             [currentSlide, offset] = showSlide(slides, slideTo - 1, offset, width , sliderInner, indicators)
         })
     })
+
+    slider.style.height = `${document.documentElement.clientHeight - document.querySelector('.header').clientHeight}px`;
+    //document.querySelector('.slider__overlay').style.height = `${document.documentElement.clientHeight - document.querySelector('.header').clientHeight}px`;
 
     function createSliderElement(parentElement, elementClass) {
         const newElement = document.createElement('div');
@@ -229,5 +232,8 @@ slider({
     activateNavigationDots: true,
     activateSlidesMoving: true,
     autoScrollSpeed: 4,
-    autoScopeSpeed: 1
+    autoScopeSpeed: 1,
+    startSlideIndex: 2,
+    activateAutoTurning: true,
+    turningInterval: 10000
 });

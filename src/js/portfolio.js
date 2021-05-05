@@ -15,7 +15,6 @@ function portfolio() {
             <img src="${img.src}" alt="" class="modal__image">
         `;
 
-        console.log(content.children[0].width)
         wrapper.style.width = `${content.children[0].width}px`;
 
         document.querySelector('.modal__close').addEventListener('click', () => {
