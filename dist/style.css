@@ -523,6 +523,10 @@ footer {
   .about__portrait {
     height: 160px;
     width: 160px; }
+  .separator__img {
+    position: relative;
+    height: 100%;
+    object-fit: cover; }
   .form__transparent {
     flex-direction: column; }
   .form__text {
