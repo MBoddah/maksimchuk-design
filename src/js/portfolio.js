@@ -9,8 +9,8 @@ function portfolio() {
         const modal = document.querySelector('.modal'),
             content = document.querySelector('.modal__content'),
             wrapper = document.querySelector('.modal__wrapper');
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'
+        modal.classList.remove('_hide');
+        document.body.classList.add('_lock');
         content.innerHTML = `
             <img src="${img.src}" alt="" class="modal__image">
         `;
@@ -23,8 +23,8 @@ function portfolio() {
     }
 
     function closeModal(modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
+        modal.classList.add('_hide');
+        document.body.classList.remove('_lock');
     }
 }
 

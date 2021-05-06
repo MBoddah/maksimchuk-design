@@ -122,9 +122,8 @@ function slider( {
         })
     })
 
-    slider.style.height = `${document.documentElement.clientHeight - document.querySelector('.header').clientHeight}px`;
-    //document.querySelector('.slider__overlay').style.height = `${document.documentElement.clientHeight - document.querySelector('.header').clientHeight}px`;
-
+    slider.style.height = `${document.documentElement.clientHeight - 160}px`;
+    
     function createSliderElement(parentElement, elementClass) {
         const newElement = document.createElement('div');
         newElement.classList.add(elementClass.slice(1));
@@ -219,9 +218,9 @@ const selectors = {
 };
 
 const slidesList = [
-    {imgSrc:'img/arts/slides/cyberpunk.png', alt: 'cyberpunk', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'},
-    {imgSrc:'img/arts/slides/skull.png', alt: 'skull', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'},
-    {imgSrc:'img/arts/slides/wings3.png', alt: 'wings', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'}
+    {imgSrc:'img/arts/slides/cyberpunk.png', alt: 'cyberpunk', text: 'Портреты и 2-D изображения'},
+    {imgSrc:'img/arts/slides/skull.png', alt: 'skull', text: 'Логотипы и иконки'},
+    {imgSrc:'img/arts/slides/wings3.png', alt: 'wings', text: '3-D что-то там, хз'}
 ]
 
 slider({

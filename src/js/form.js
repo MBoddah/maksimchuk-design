@@ -2,14 +2,15 @@ function form() {
     const form = document.querySelector('.form__transparent');
     const formText = document.querySelector('.form__text');
     const formBody = document.querySelector('.form__wrapper');  
+    const formTitle = document.querySelector('.form__title');
 
     document.addEventListener( 'scroll', () => {
         if(form.getBoundingClientRect().top + 300< window.screen.height) {
-            formText.classList.add('show-in');
-            formBody.classList.add('show-in');
+            formText.classList.add('_show-in');
+            formBody.classList.add('_show-in');
         } else {
-            formText.classList.remove('show-in');
-            formBody.classList.remove('show-in');
+            formText.classList.remove('_show-in');
+            formBody.classList.remove('_show-in');
         }
     });
 
@@ -24,7 +25,7 @@ function form() {
 
         if (error === 0) {
             document.querySelector('.form__transparent').classList.add('_sending');
-            let response = await fetch('/src/php/sendmail.php', {
+            let response = await fetch('/src/php/sendmail1.php', {
                 method: 'POST',
                 body: formData 
             });
@@ -77,11 +78,16 @@ function form() {
 
     function changeFormState(formBody, formText, isSend) {
         if(isSend) {
-            formBody.classList.remove('show-in')
+            if(document.documentElement.clientWidth > 680) {
+                formBody.classList.remove('_show-in')
+            } else {
+                formTitle.innerHTML = 'Спасибо! Запрос отправлен!';
+            }
             formText.style.transform = 'scale(1.1)';
-            formText.innerHTML = 'Thank you! I`ve received your email and will reply as soon as possible!';
+            formText.innerHTML = 'Спасибо! Я получил ваше письмо и отвечу как можно скорее!';
         } else {
-            formText.innerHTML = 'Something went wrong. Contact me in social networks or try later';
+            formTitle.innerHTML = 'Что-то пошло не так...';
+            formText.innerHTML = 'Что-то пошло не так... Напишите мне в социальных сетях, или попробуйте позже';
         }
     }
 }

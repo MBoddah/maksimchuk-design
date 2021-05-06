@@ -10,12 +10,13 @@ html {
 
 body {
     max-width: 1920px;
+    min-width: 400px;
     margin: auto;
     background-color: #fff;
 }
 
 @mixin main-font($size, $weight) {
-    font-family: 'Teko', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: $size;
     font-weight: $weight;
     color: #111;
@@ -34,8 +35,8 @@ body {
 
 .header{
     position: relative;
-    //height: 21vh;
     background-color: white;
+    height: 160px;
     &__row{
         width: 100%;
         display: flex;
@@ -52,36 +53,38 @@ body {
 .logo{
     display: flex;
     height: 120px;
-    width: 60%;
+    width: 58%;
     &__img {
+        margin: auto 0;
         width: 120px;
         height: 120px;
         border-radius: 100%;
     }
 
     &__text{
+        margin: auto;
         margin-left: 15px;
         display: flex;
         flex-direction:  column;
     }
 
     &__headtext{
-        @include main-font(54px, 500);
+        @include main-font(48px, 500);
     }
 
     &__subtext{
-        @include main-font(24px, 200);
+        @include main-font(22px, 200);
     }
 }
 
 .menu {
     margin-right: 3%;
     display: flex;
-    width: 40%;
+    width: 42%;
     align-items: center;
     justify-content: flex-end;
     &__item{
-        @include main-font(28px, 200);
+        @include main-font(24px, 200);
         margin: 10px;
         text-decoration: none;
 
@@ -89,11 +92,14 @@ body {
             color: rgb(214, 46, 46);
         }
     }
+
+    &__burger {
+        display: none;
+    }
 }
 
 .slider {
     z-index: 2;
-    //height: 79vh;
     &__wrapper{
         position: relative;
         width: 100%;
@@ -108,7 +114,6 @@ body {
         position: relative;
         overflow: hidden;
         width: 100%;
-        //height: 79vh;
         object-fit: cover;
     }
 
@@ -123,7 +128,7 @@ body {
     }
 
     &__text{
-        @include main-font(64px, 200);
+        @include main-font(64px, 400);
         color: white;
         margin: 3%;
     }
@@ -226,6 +231,7 @@ body {
     }
 
     &__portrait{
+        margin: auto;
         height: 220px;
         width: 220px;
         object-fit: cover;
@@ -300,6 +306,7 @@ body {
 }
 
 .form{
+    position: relative;
     width: 100%;
     display: flex;
     align-items: center;
@@ -310,7 +317,7 @@ body {
     &__transparent{
         width: 100%;
         position: relative;
-        padding: 60px 10%;
+        padding: 60px 3%;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -339,26 +346,28 @@ body {
     }
 
     &__text{
-        transform: translateX(-900px);
+        opacity: 0;
+        transform: translateX(-200px);
         transition: all 1.5s;
-        width: 50%;
+        width: 45%;
         display: flex;
-        @include main-font(42px, 100);
+        @include main-font(38px, 200);
         color: rgb(245, 245, 245);
     }
 
     &__wrapper{
-        transform: translateX(900px);
+        opacity: 0;
+        transform: translateX(200px);
         transition: all 1.5s;
-        width: 50%;
+        width: 55%;
         display: flex;
         position: relative;
         flex-direction: column;    
-        margin-left: 5%;   
+        margin-left: 3%;   
     }
 
     &__title{
-        @include main-font(70px, 400);
+        @include main-font(54px, 400);
         color: #fff;
     }
 
@@ -417,13 +426,14 @@ body {
     }
 
     &__title{
-        @include main-font(70px, 400);
+        @include main-font(64px, 400);
     }
 
     &__row{
+        opacity: 0;
         z-index: 1;
         margin-top: 2%;
-        transform: translateY(200%);
+        transform: translateY(46px);
         transition: all 1.5s;
     }
 
@@ -440,7 +450,7 @@ body {
 
 .modal{
     position: fixed;
-    display: none;
+    display: flex;
     top: 0;
     right: 0;
     left: 0;
@@ -488,7 +498,309 @@ footer{
     color: #fff;
 }
 
-.show-in{
+._hide {
+    display: none;
+}
+._show-in{
+    opacity: 1;
     transform: translateY(0);
     transform: translateX(0);
 }
+
+._lock{
+    overflow: hidden;
+}
+
+@media (max-width: 960px) {
+    .logo{
+        width: 90%;
+    }
+    .menu {
+        width: 10%;
+
+        &__wrapper {
+            position: absolute;
+            padding: 50px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            top: 160px;
+            left: 0;
+            height: 0;
+            padding: 0;
+            width: 100vw;
+            background-color: rgba($color: #000000, $alpha: .8);
+            overflow: auto;
+            transition: all .5s;
+
+            &_riseup{
+                padding-top: 2%;
+                height: 100vh;
+            }
+        }
+        &__item{
+            @include main-font(72px, 200);
+            color: white;
+            margin-left: 50px;
+        }
+        &__burger {
+            display: block;
+            position: relative;
+            width: 50px;
+            height: 30px;
+            cursor: pointer;
+
+            &._active{
+                span {
+                    transform: scale(0);
+                }
+
+                &::before{
+                    top: 50%;
+                    transform: rotate(-45deg) translate(0px, -50%);
+                }
+
+                &::after{
+                    bottom: 50%;
+                    transform: rotate(45deg) translate(0px, 50%);
+                }
+            }
+
+            &::before, 
+            &::after,
+            & span {
+                left: 0;
+                position: absolute;
+                height: 10%;
+                width: 100%;
+                transition: all .3s;
+                background-color: #000;
+            }
+            &::before, 
+            &::after{
+                content: "";
+            }
+            &::after{
+                bottom: 0;
+            }
+            &::before{
+                top: 0;
+            }
+            & span {
+                top: 45%;
+            }
+        }
+    }
+
+    .about {
+        padding: 5%;
+
+        &__wrapper {
+            flex-direction: column;
+        }
+
+        &__portrait {
+            margin-bottom: 5%;
+        }
+    }
+
+    .form {
+        &__text{
+            @include main-font(24px, 200);
+            color: rgb(245, 245, 245);
+        }
+    
+        &__title{
+            @include main-font(42px, 400);
+            color: #fff;
+        }
+    }
+}
+
+@media (max-width: 705px) {
+    .logo {
+        & img {
+            height: 100px;
+            width: 100px;
+        }
+
+        &__headtext {
+            @include main-font(40px, 400)
+        }
+
+        &__subtext {
+            @include main-font(20px, 200)
+        }
+    }
+
+
+    .form {
+        &__transparent {
+            flex-direction: column;
+        }
+
+        &__text{
+            display: none;
+        }
+
+        &__wrapper{
+            padding: 5%;
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+
+    .socials{
+        &__title {
+            @include main-font(54px, 400);
+        }
+        &__link {
+            @include main-font(36px, 200);
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .logo {
+        & img {
+            height: 80px;
+            width: 80px;
+        }
+
+        &__headtext {
+            @include main-font(32px, 400)
+        }
+
+        &__subtext {
+            @include main-font(16px, 200)
+        }
+    }
+
+    .menu__burger {
+        width: 40px;
+        height: 26px;
+    }
+
+    .socials{
+        &__title {
+            @include main-font(40px, 400);
+        }
+        &__link {
+            @include main-font(28px, 200);
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .logo {
+        & img {
+            height: 80px;
+            width: 80px;
+        }
+
+        &__headtext {
+            @include main-font(32px, 400)
+        }
+
+        &__subtext {
+            @include main-font(16px, 200)
+        }
+    }
+
+    .menu__burger {
+        width: 40px;
+        height: 26px;
+    }
+
+    .about__portrait {
+        height: 160px;
+        width: 160px;
+    }
+
+    .socials{
+        &__title {
+            @include main-font(40px, 400);
+        }
+        &__link {
+            @include main-font(28px, 200);
+        }
+    }
+}
+
+@media (max-width: 470px) {
+
+    .logo {
+        & img {
+            height: 65px;
+            width: 65px;
+        }
+
+        &__headtext {
+            @include main-font(26px, 400)
+        }
+
+        &__subtext {
+            @include main-font(14px, 200)
+        }
+    }
+
+    .menu__burger {
+        width: 40px;
+        height: 26px;
+    }
+
+    .socials{
+        &__title {
+            @include main-font(34px, 400);
+        }
+        &__link {
+            @include main-font(24px, 200);
+        }
+    }
+}
+
+@media (max-width: 405px) {
+    .header__wrapper {
+        padding: 10px 0;
+    }
+
+    .logo {
+        & img {
+            display: none;
+        }
+
+        &__headtext {
+            @include main-font(26px, 400)
+        }
+
+        &__subtext {
+            @include main-font(14px, 200)
+        }
+    }
+
+    .form{
+        &__title{
+            @include main-font(32px, 400);
+            color: #fff;
+        }
+        &__label{
+            @include main-font(18px, 100);
+            color: rgba(255, 255, 255, .6);
+        }
+
+        &__input{
+            @include main-font(18px, 100);
+            color: rgba(255, 255, 255, .6);
+        }
+    }
+
+    .socials{
+        &__title {
+            @include main-font(30px, 400);
+        }
+        &__link {
+            @include main-font(20px, 200);
+        }
+    }
+}
+

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dist/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/icons/favicon.png" type="image/x-icon">
     <title>Sergey Maksimchuk</title>
 </head>
@@ -23,10 +23,14 @@
                 </div>
                 
                 <div class="menu">
-                    <a href="" class="menu__item">Home</a>
-                    <a href="#about" class="menu__item">About</a>
-                    <a href="#portfolio" class="menu__item">Portfolio</a>
-                    <a href="#contacts" class="menu__item">Contact</a>
+                    <div class="menu__wrapper">
+                        <a href="#about" class="menu__item">Информация</a>
+                        <a href="#portfolio" class="menu__item">Портфолио</a>
+                        <a href="#contacts" class="menu__item">Контакты</a>
+                    </div>
+                    <div class="menu__burger">
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,14 +45,14 @@
     <div class="about" id="about">
         <div class="about__wrapper">
             <img src="img/logo.jpg" alt="none" class="about__portrait">
-            <a class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni recusandae, deleniti officia laboriosam molestiae voluptatem sed delectus maiores fugiat voluptatum architecto, hic asperiores, quidem necessitatibus nam vero voluptate porro beatae culpa perspiciatis ex minus ad. Dolor similique ipsum voluptas, possimus nobis sunt sequi distinctio deleniti omnis sit eius explicabo reiciendis quis dolorem molestias, culpa nisi, quam voluptates itaque architecto vel?</a>
+            <a class="about__text">Привет! Меня зовут Сергей Максимчук, добро пожаловать на мой сайт! Он почти готов, просто я никак не могу набросать разработчику текст для этого и других блоков. Но не переживайте, заказы я выполняю вовремя. Вроде бы...</a>
         </div>
     </div>
 
     <div class="separator">
         <img src="img/arts//city.png" alt="city" class="separator__img">
         <div class="separator__overlay"></div>
-        <h1 class="separator__text">Portfolio</h1>
+        <h1 class="separator__text">Портфолио</h1>
     </div>
 
     <div class="portfolio">
@@ -103,25 +107,25 @@
 
     <div class="form" id="contacts">
         <form action="#" class="form__transparent">
-            <a class="form__text">Thanks for a visit! <br>  Have a question? Want to order an art, logo, portrait or illustration? Have a deal or wanna be a partner?</a>
+            <a class="form__text">Спасибо за внимание!<br>Остались вопросы? Хотите заказать арт, логотип или портрет? Есть предложение о сотрудничестве?</a>
             <div class="form__wrapper">
-                <h2 class="form__title">Contact me!</h2>
-                <label for="firstName" class="form__label">First name:</label>
+                <h2 class="form__title">Напишите мне!</h2>
+                <label for="firstName" class="form__label">Имя:</label>
                 <input type="text" name="firstName" class="form__input" id="input__firstname">
-                <label for="lastName" class="form__label">Last name:</label>
+                <label for="lastName" class="form__label">Фамилия:</label>
                 <input type="text" name="secondName" class="form__input" id="input__lastname">
                 <label for="email" class="form__label">E-mail:</label>
                 <input type="email" name="email" class="form__input _email" id="input__email">
-                <label for="message" class="form__label">Message:</label>
+                <label for="message" class="form__label">Сообщение:</label>
                 <textarea type="text" name="message" class="form__input" id="input__message"></textarea>
-                <input type="submit" id="form__submit" value="Send">
+                <input type="submit" id="form__submit" value="Отправить">
             </div>
         </form>
     </div>
 
     <div class="socials">
         <div class="socials__wrapper">
-            <h1 class="socials__title">Follow my social networks</h1>
+            <h1 class="socials__title">Мои социальные сети</h1>
             <div class="socials__row">
                 <a href="https://www.instagram.com/maksimchuksergey/" class="socials__link">Instagram</a>
                 <a href="https://www.behance.net/bartolomeo8497" target="_blank" class="socials__link">Behance</a>
@@ -130,7 +134,7 @@
         </div>
     </div>
 
-    <div class="modal">
+    <div class="modal _hide">
         <div class="modal__wrapper">
             <div class="modal__content"></div>
             <a href="#close" title="Close" class="modal__close">×</a>
