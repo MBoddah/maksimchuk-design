@@ -44,7 +44,7 @@ document.addEventListener( 'scroll', () => {
         }
     }
 
-    if(socials.getBoundingClientRect().top + 100 < window.screen.height) {
+    if(socials.getBoundingClientRect().top < window.screen.height) {
         socialsList.classList.add('_show-in');
     } else {
         socialsList.classList.remove('_show-in');

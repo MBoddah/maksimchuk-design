@@ -218,9 +218,9 @@ const selectors = {
 };
 
 const slidesList = [
-    {imgSrc:'img/arts/slides/cyberpunk.png', alt: 'cyberpunk', text: 'Портреты и 2-D изображения'},
+    {imgSrc:'img/arts/slides/cyberpunk.png', alt: 'cyberpunk', text: 'Портреты и арты'},
     {imgSrc:'img/arts/slides/skull.png', alt: 'skull', text: 'Логотипы и иконки'},
-    {imgSrc:'img/arts/slides/wings3.png', alt: 'wings', text: '3-D что-то там, хз'}
+    {imgSrc:'img/arts/slides/wings3.png', alt: 'wings', text: '3-D графика'}
 ]
 
 slider({

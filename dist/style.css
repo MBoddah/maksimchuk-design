@@ -100,7 +100,7 @@ body {
     font-weight: 400;
     color: #111;
     color: white;
-    margin: 3%; }
+    margin: 30px; }
   .slider__indicators {
     position: absolute;
     right: 0;
@@ -130,7 +130,7 @@ body {
     display: flex;
     border-radius: 50%;
     position: absolute;
-    top: 57%;
+    bottom: 120px;
     height: 100px;
     width: 50px;
     left: 85px; }
@@ -150,7 +150,7 @@ body {
     display: flex;
     border-radius: 50%;
     position: absolute;
-    top: 57%;
+    bottom: 120px;
     height: 100px;
     width: 50px;
     left: 30px; }
@@ -361,7 +361,7 @@ body {
     z-index: 1;
     margin-top: 2%;
     transform: translateY(46px);
-    transition: all 1.5s; }
+    transition: all 2.5s; }
   .socials__link {
     font-family: 'Oswald', sans-serif;
     font-size: 45px;
@@ -412,7 +412,7 @@ footer {
   z-index: 2;
   background-color: black;
   font-family: 'Oswald', sans-serif;
-  font-size: 32px;
+  font-size: 18px;
   font-weight: 200;
   color: #111;
   color: #fff; }
@@ -443,7 +443,7 @@ footer {
       left: 0;
       height: 0;
       padding: 0;
-      width: 100vw;
+      width: 100%;
       background-color: rgba(0, 0, 0, 0.8);
       overflow: auto;
       transition: all .5s; }
@@ -452,11 +452,11 @@ footer {
         height: 100vh; }
     .menu__item {
       font-family: 'Oswald', sans-serif;
-      font-size: 72px;
+      font-size: 42px;
       font-weight: 200;
       color: #111;
       color: white;
-      margin-left: 50px; }
+      margin-left: 25px; }
     .menu__burger {
       display: block;
       position: relative;
@@ -520,6 +520,9 @@ footer {
     font-size: 20px;
     font-weight: 200;
     color: #111; }
+  .about__portrait {
+    height: 160px;
+    width: 160px; }
   .form__transparent {
     flex-direction: column; }
   .form__text {
@@ -556,37 +559,24 @@ footer {
   .menu__burger {
     width: 40px;
     height: 26px; }
-  .socials__title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 40px;
-    font-weight: 400;
-    color: #111; }
-  .socials__link {
-    font-family: 'Oswald', sans-serif;
-    font-size: 28px;
-    font-weight: 200;
-    color: #111; } }
-
-@media (max-width: 550px) {
-  .logo img {
-    height: 80px;
-    width: 80px; }
-  .logo__headtext {
-    font-family: 'Oswald', sans-serif;
-    font-size: 32px;
-    font-weight: 400;
-    color: #111; }
-  .logo__subtext {
-    font-family: 'Oswald', sans-serif;
-    font-size: 16px;
-    font-weight: 200;
-    color: #111; }
-  .menu__burger {
-    width: 40px;
-    height: 26px; }
+  .about {
+    padding: 10%; }
   .about__portrait {
-    height: 160px;
-    width: 160px; }
+    display: none; }
+  .slider__text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 54px;
+    font-weight: 400;
+    color: #111;
+    color: white; }
+  .slider__prev {
+    bottom: 110px; }
+  .slider__next {
+    bottom: 110px; }
+  .portfolio__column {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px; }
   .socials__title {
     font-family: 'Oswald', sans-serif;
     font-size: 40px;
@@ -596,7 +586,13 @@ footer {
     font-family: 'Oswald', sans-serif;
     font-size: 28px;
     font-weight: 200;
-    color: #111; } }
+    color: #111; }
+  .modal__wrapper img {
+    height: 100%;
+    width: 90vw;
+    object-fit: cover;
+    border-radius: 3%;
+    position: absolute; } }
 
 @media (max-width: 470px) {
   .logo img {
@@ -612,6 +608,16 @@ footer {
     font-size: 14px;
     font-weight: 200;
     color: #111; }
+  .slider__text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #111;
+    color: white; }
+  .slider__prev {
+    bottom: 100px; }
+  .slider__next {
+    bottom: 100px; }
   .menu__burger {
     width: 40px;
     height: 26px; }
@@ -641,6 +647,16 @@ footer {
     font-size: 14px;
     font-weight: 200;
     color: #111; }
+  .slider__text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #111;
+    color: white; }
+  .slider__prev {
+    bottom: 80px; }
+  .slider__next {
+    bottom: 80px; }
   .form__title {
     font-family: 'Oswald', sans-serif;
     font-size: 32px;
