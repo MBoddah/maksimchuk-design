@@ -218,8 +218,8 @@ const selectors = {
 };
 
 const slidesList = [
-    {imgSrc:'img/arts/slides/cyberpunk.png', alt: 'cyberpunk', text: 'Портреты и арты'},
-    {imgSrc:'img/arts/slides/skull.png', alt: 'skull', text: 'Логотипы и иконки'},
+    {imgSrc:'img/arts/slides/cyberpunk.jpg', alt: 'cyberpunk', text: 'Портреты и арты'},
+    {imgSrc:'img/arts/slides/skull.jpg', alt: 'skull', text: 'Логотипы и иконки'},
     {imgSrc:'img/arts/slides/wings.png', alt: 'wings', text: '3-D графика'}
 ]
 
