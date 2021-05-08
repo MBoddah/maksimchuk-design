@@ -15,6 +15,8 @@ burger.addEventListener('click', () => {
     burger.classList.toggle('_active');
 })
 
+document.querySelector('.menu__wrapper').style.top = `${document.querySelector('.header').clientHeight}px`
+
 //////smooth scroll////////
 
 links.forEach( link => {
@@ -38,12 +40,6 @@ function scrollSmoothTo(elem) {
 }
 
 document.addEventListener( 'scroll', () => {
-    if(background.getBoundingClientRect().top < window.screen.height) {
-        if(((window.pageYOffset -  background.getBoundingClientRect().top)/4) < (background.clientHeight - separator.clientHeight)) {
-            background.style.transform = `translateY(-${(window.pageYOffset -  background.getBoundingClientRect().top)/4}px)`
-        }
-    }
-
     if(socials.getBoundingClientRect().top < window.screen.height) {
         socialsList.classList.add('_show-in');
     } else {

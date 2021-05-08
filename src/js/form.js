@@ -25,7 +25,7 @@ function form() {
 
         if (error === 0) {
             document.querySelector('.form__transparent').classList.add('_sending');
-            let response = await fetch('/src/php/sendmail1.php', {
+            let response = await fetch('/src/php/sendmail.php', {
                 method: 'POST',
                 body: formData 
             });

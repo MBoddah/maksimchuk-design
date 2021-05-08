@@ -122,7 +122,7 @@ function slider( {
         })
     })
 
-    slider.style.height = `${document.documentElement.clientHeight - 160}px`;
+    slider.style.height = `${document.documentElement.clientHeight - document.querySelector('.header').clientHeight}px`;
     
     function createSliderElement(parentElement, elementClass) {
         const newElement = document.createElement('div');
@@ -220,7 +220,7 @@ const selectors = {
 const slidesList = [
     {imgSrc:'img/arts/slides/cyberpunk.png', alt: 'cyberpunk', text: 'Портреты и арты'},
     {imgSrc:'img/arts/slides/skull.png', alt: 'skull', text: 'Логотипы и иконки'},
-    {imgSrc:'img/arts/slides/wings3.png', alt: 'wings', text: '3-D графика'}
+    {imgSrc:'img/arts/slides/wings.png', alt: 'wings', text: '3-D графика'}
 ]
 
 slider({
