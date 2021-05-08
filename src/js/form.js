@@ -92,4 +92,4 @@ function form() {
     }
 }
 
-form();
+export default form;
