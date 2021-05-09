@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dist/style.css">
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"> -->
     <link rel="shortcut icon" href="img/icons/favicon.png" type="image/x-icon">
     <title>Sergey Maksimchuk</title>
 </head>
 <body>
+    <div class="preloader">
+        <div class="preloader__spin">
+        </div>
+    </div>
     <header class="header">
         <div class="header__row">
             <div class="header__wrapper">
@@ -119,6 +121,9 @@
                 <label for="message" class="form__label">Сообщение:</label>
                 <textarea type="text" name="message" class="form__input" id="input__message"></textarea>
                 <input type="submit" id="form__submit" value="Отправить">
+            </div>
+            <div class="form__loader">
+                <div class="form__spin"></div>
             </div>
         </form>
     </div>

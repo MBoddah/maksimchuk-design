@@ -24,7 +24,7 @@ function form() {
         let formData = new FormData(form);
 
         if (error === 0) {
-            document.querySelector('.form__transparent').classList.add('_sending');
+            document.querySelector('.form__loader').classList.add('_sending');
             let response = await fetch('/src/php/sendmail.php', {
                 method: 'POST',
                 body: formData 
@@ -32,9 +32,9 @@ function form() {
 
             if (response.ok) {
                 form.reset();
-                document.querySelector('.form__transparent').classList.remove('_sending');
+                document.querySelector('.form__loader').classList.remove('_sending');
             } else {
-                document.querySelector('.form__transparent').classList.remove('_sending');
+                document.querySelector('.form__loader').classList.remove('_sending');
             }
             changeFormState(formBody, formText, response.ok);
         }

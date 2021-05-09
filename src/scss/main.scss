@@ -49,6 +49,44 @@ body {
     background-color: rgba($color: #000000, $alpha: $opacity);
 }
 
+@keyframes loader {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.preloader{
+    z-index: 2;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transition: all .8s;
+    opacity: 1;
+    visibility: visible;
+
+    &__spin{
+        width: 100px;
+        height: 100px;
+        border: 10px solid rgba($color: #000, $alpha: .3);
+        border-radius: 50%;
+        border-left-color: black;
+        animation: loader 1s linear infinite;
+    }
+
+    &._done{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 .header{
     position: relative;
     background-color: white;
@@ -237,11 +275,9 @@ body {
 
 .about{
     position: relative;
-    z-index: 2;
     padding: 10%;
     background-color: #fff;
     &__wrapper{
-        z-index: 2;
         display: flex;
         flex-direction: row;
     }
@@ -352,17 +388,36 @@ body {
         }
     }
 
-    &__transparent._sending::after{
-        content: "";
+    &__loader{
+        z-index: 2;
         position: absolute;
-        z-index: 3;
-        top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
-        background: rgba($color: #000000, $alpha: .6) url(/img/icons/form-spinner.svg) center no-repeat;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba($color: #000000, $alpha: .4);
+        transition: all .8s;
+        opacity: 0;
+        visibility: hidden;
+            
+        &._sending {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
+    &__spin{
+        width: 100px;
+        height: 100px;
+        border: 10px solid rgba($color: #fff, $alpha: .3);
+        border-radius: 50%;
+        border-left-color: white;
+        animation: loader 1s linear infinite;
+    }
+    
     &__text{
         opacity: 0;
         transform: translateX(-200px);
@@ -437,7 +492,6 @@ body {
     margin-top: 5%;;
     &__wrapper{
         width: 100%;
-        z-index: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -474,7 +528,7 @@ body {
     left: 0;
     bottom: 0;
     background-color: rgba($color: #000000, $alpha: .6);
-    z-index: 3;
+    z-index: 2;
 
     &__wrapper{
         position: relative;
@@ -510,7 +564,6 @@ footer{
     margin-top: 5%;
     padding: 2%;
     position: relative;
-    z-index: 2;
     background-color: black;
     @include light-font(18px, 200);
     color: #fff;

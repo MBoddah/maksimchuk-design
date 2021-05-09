@@ -2,6 +2,7 @@ import menu from './js/menu';
 import slider from './js/slider';
 import portfolio from './js/portfolio';
 import form from './js/form';
+import preloader from './js/preloader';
 import './scss/main.scss';
 
 const selectors = {
@@ -31,4 +32,5 @@ slider({
 });
 portfolio();
 form();
+preloader();
 
