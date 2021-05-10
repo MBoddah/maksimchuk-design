@@ -218,7 +218,9 @@ body {
   background-color: #fff; }
   .about__wrapper {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
   .about__portrait {
     margin: auto;
     height: 220px;
@@ -586,7 +588,8 @@ footer {
     height: 100%;
     object-fit: cover; }
   .form__transparent {
-    flex-direction: column; }
+    flex-direction: column;
+    overflow: hidden; }
   .form__text {
     display: none; }
   .form__wrapper {

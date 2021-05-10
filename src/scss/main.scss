@@ -280,6 +280,8 @@ body {
     &__wrapper{
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
 
     &__portrait{
@@ -718,6 +720,7 @@ footer{
     .form {
         &__transparent {
             flex-direction: column;
+            overflow: hidden; 
         }
 
         &__text{
