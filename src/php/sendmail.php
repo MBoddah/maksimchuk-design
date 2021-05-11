@@ -5,7 +5,7 @@ $subject = "=?utf-8?B?".base64_encode($subject)."?=";
 
 $firstName = trim($_POST['firstName']);
 $secondName = trim($_POST['secondName']);
-$to = "mboddah@yandex.ru";
+$to = "sergeymaksimchuk1313@gmail.com";
 $from = trim($_POST['email']);
 
 $headers = "From: $from\r\nReply-to: $from\r\nContent-type: text/plain; charset=utf-8\r\n";

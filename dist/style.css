@@ -453,6 +453,9 @@ body {
       border-radius: 3%;
       position: absolute; }
   .modal__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 20px;
     float: right;
     font-family: sans-serif;
@@ -461,8 +464,16 @@ body {
     line-height: 1;
     color: #000;
     text-shadow: 0 1px 0 #fff;
-    opacity: .7;
-    text-decoration: none; }
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+    opacity: .5;
+    text-decoration: none;
+    transition: all .3s; }
+    .modal__close:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      opacity: .7; }
 
 footer {
   display: flex;
@@ -750,4 +761,27 @@ footer {
     font-size: 20px;
     font-weight: 200;
     color: #111; } }
+
+@media (max-height: 600px) {
+  .logo {
+    height: 70px; }
+    .logo img {
+      display: none; }
+    .logo__headtext {
+      font-family: 'Oswald', sans-serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: #111; }
+    .logo__subtext {
+      font-family: 'Oswald Light', sans-serif;
+      font-size: 14px;
+      font-weight: 200;
+      color: #111; }
+  .header__wrapper {
+    padding: 6px 9px; }
+  .menu__burger {
+    width: 40px;
+    height: 26px; }
+  .menu__item {
+    font-size: 22px; } }
 
