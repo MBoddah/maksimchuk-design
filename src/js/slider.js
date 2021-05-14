@@ -59,6 +59,8 @@ function slider( {
         indicators = [];
     let offset = width.replace(/\D/g, '')*currentSlide;
     let timerTurn;
+    let startingSwipeX,
+        changedSwipeX;
 
     renderArrows(leftArrowImg, rightArrowImg, arrowPrev, arrowNext);
 
@@ -98,17 +100,20 @@ function slider( {
         }
     }
     
-    [currentSlide, offset] = showSlide(slides, currentSlide, offset, width , sliderInner, indicators)      // Shows start slide
+    currentSlide = showSlide(slides, currentSlide, offset, width , sliderInner, indicators)      // Shows start slide
+    offset = updateOffset(currentSlide, width); 
 
     arrowPrev.addEventListener('click', () =>{                                                             // Activates slider controls
-        [currentSlide, offset] = showSlide(slides, --currentSlide, offset, width , sliderInner, indicators)
+        currentSlide = showSlide(slides, --currentSlide, offset, width , sliderInner, indicators)
+        offset = updateOffset(currentSlide, width);
         if (activateAutoTurning === true) {
             clearInterval(timerTurn);
         }
     })
 
     arrowNext.addEventListener('click', () =>{
-        [currentSlide, offset] = showSlide(slides, ++currentSlide, offset, width , sliderInner, indicators)
+        currentSlide = showSlide(slides, ++currentSlide, offset, width , sliderInner, indicators);
+        offset = updateOffset(currentSlide, width);
         if (activateAutoTurning === true) {
             clearInterval(timerTurn);
         }
@@ -118,12 +123,39 @@ function slider( {
     indicators.forEach( (dot) => {
         dot.addEventListener('click', (e) => {
             const slideTo = e.target.getAttribute('data-slide-to');
-            [currentSlide, offset] = showSlide(slides, slideTo - 1, offset, width , sliderInner, indicators)
+            currentSlide = showSlide(slides, slideTo - 1, offset, width , sliderInner, indicators);
+            offset = updateOffset(currentSlide, width);
+            if (activateAutoTurning === true) {
+                clearInterval(timerTurn);
+            }
         })
+    })
+
+       //Activate swipes
+        sliderInner.addEventListener('touchstart', (event) => {
+        startingSwipeX = getStartingSwipeX(event);
+        if (activateAutoTurning === true) {
+            clearInterval(timerTurn);
+        }
+    })
+
+    sliderInner.addEventListener('touchmove', (event) => {
+        changedSwipeX = getChangedSwipeX(event, startingSwipeX);
+        sliderInner.style.transform = `translateX(${-offset + changedSwipeX}px)`;
+    })
+
+    sliderInner.addEventListener('touchend', () => {
+        const swipeTo = getSwipe(changedSwipeX, width.replace(/\Bpx/g, '')/3, currentSlide)
+        currentSlide = showSlide(slides, +swipeTo, offset, width , sliderInner, indicators)
+        offset = updateOffset(currentSlide, width);
     })
 
     slider.style.height = `${document.documentElement.clientHeight - document.querySelector('.header').clientHeight}px`;
     
+    function updateOffset(slide, width) {
+        return width.replace(/\D/g, '')*slide;
+    }
+
     function createSliderElement(parentElement, elementClass) {
         const newElement = document.createElement('div');
         newElement.classList.add(elementClass.slice(1));
@@ -189,7 +221,29 @@ function slider( {
             indicators[slideIndex].style.opacity = 1;
         }
 
-        return [slideIndex, offset];
+        return slideIndex;
+    }
+
+    function getStartingSwipeX(event) {
+        return event.touches[0].clientX;
+    }
+
+    function getChangedSwipeX(event, start) {
+        return event.touches[0].clientX - start;
+    }
+
+    function getSwipe(change, part, current) {
+        if(Math.abs(change) < part) {
+            return current;
+        }
+
+        if(change < -part) {
+            return ++current;
+        } else {
+            if(change > part) {
+                return --current;
+            }
+        }
     }
 
     function scrollImg(img, speed) {
