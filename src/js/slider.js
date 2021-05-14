@@ -133,7 +133,7 @@ function slider( {
 
        //Activate swipes
         sliderInner.addEventListener('touchstart', (event) => {
-        event.preventDefault();
+        event.preventDefault;
         startingSwipeX = getStartingSwipeX(event);
         if (activateAutoTurning === true) {
             clearInterval(timerTurn);
@@ -141,13 +141,13 @@ function slider( {
     })
 
     sliderInner.addEventListener('touchmove', (event) => {
-        event.preventDefault();
+        event.preventDefault;
         changedSwipeX = getChangedSwipeX(event, startingSwipeX);
         sliderInner.style.transform = `translateX(${-offset + changedSwipeX}px)`;
     })
 
     sliderInner.addEventListener('touchend', (event) => {
-        event.preventDefault();
+        event.preventDefault;
         const swipeTo = getSwipe(changedSwipeX, width.replace(/\Bpx/g, '')/3, currentSlide)
         currentSlide = showSlide(slides, +swipeTo, offset, width , sliderInner, indicators)
         offset = updateOffset(currentSlide, width);
