@@ -132,7 +132,7 @@ function slider( {
     })
 
        //Activate swipes
-        sliderInner.addEventListener('touchstart', (event) => {
+    sliderInner.addEventListener('touchstart', (event) => {
         event.preventDefault;
         startingSwipeX = getStartingSwipeX(event);
         if (activateAutoTurning === true) {
