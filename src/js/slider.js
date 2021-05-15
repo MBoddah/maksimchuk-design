@@ -57,7 +57,7 @@ function slider( {
     let currentSlide = startSlideIndex - 1 || 0;
     const width = window.getComputedStyle(slidesWrapper).width,
         indicators = [];
-    let offset = width.replace(/\D/g, '')*currentSlide;
+    let offset = width.replace(/\px/g, '')*currentSlide;
     let timerTurn;
     let startingSwipeX,
         changedSwipeX;
@@ -93,7 +93,8 @@ function slider( {
         if (activateAutoTurning === true) {
             const time = turningInterval || 10000;
             timerTurn = setInterval( () => {
-                [currentSlide, offset] = showSlide(slides, ++currentSlide, offset, width , sliderInner, indicators)
+                currentSlide = showSlide(slides, ++currentSlide, offset, width , sliderInner, indicators);
+                offset = updateOffset(currentSlide, width);
             }, time);
         } else {
             warnAboutUnexpectedValue('actiateAutoTurning')
@@ -131,7 +132,7 @@ function slider( {
         })
     })
 
-       //Activate swipes
+    //Activate swipes
     sliderInner.addEventListener('touchstart', (event) => {
         event.preventDefault;
         startingSwipeX = getStartingSwipeX(event);
@@ -156,7 +157,7 @@ function slider( {
     slider.style.height = `${document.documentElement.clientHeight - document.querySelector('.header').clientHeight}px`;
     
     function updateOffset(slide, width) {
-        return width.replace(/\D/g, '')*slide;
+        return width.replace(/\px/g, '')*slide;
     }
 
     function createSliderElement(parentElement, elementClass) {
