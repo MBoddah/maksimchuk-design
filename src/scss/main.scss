@@ -680,7 +680,7 @@ footer{
     }
 
     .about {
-        padding: 5%;
+        padding: 10% 5%;
 
         &__wrapper {
             flex-direction: column;
@@ -720,9 +720,15 @@ footer{
         }
     }
 
-    .about__portrait {
-        height: 160px;
-        width: 160px;
+    .about{
+        &__text {
+            @include light-font(26px, 100);
+        }
+
+        &__portrait {
+            height: 160px;
+            width: 160px;
+        }
     }
 
     .separator__img{
@@ -784,10 +790,11 @@ footer{
     }
 
     .about {
-        padding: 10%;
-    }
-    .about__portrait {
-        display: none;
+        padding: 15% 8%;
+
+        &__portrait {
+            display: none;
+        }
     }
 
     .slider{

@@ -559,7 +559,7 @@ footer {
       .menu__burger span {
         top: 45%; }
   .about {
-    padding: 5%; }
+    padding: 10% 5%; }
     .about__wrapper {
       flex-direction: column; }
     .about__portrait {
@@ -590,6 +590,11 @@ footer {
     font-family: 'Oswald Light', sans-serif;
     font-size: 20px;
     font-weight: 200;
+    color: #111; }
+  .about__text {
+    font-family: 'Oswald Light', sans-serif;
+    font-size: 26px;
+    font-weight: 100;
     color: #111; }
   .about__portrait {
     height: 160px;
@@ -638,9 +643,9 @@ footer {
     width: 40px;
     height: 26px; }
   .about {
-    padding: 10%; }
-  .about__portrait {
-    display: none; }
+    padding: 15% 8%; }
+    .about__portrait {
+      display: none; }
   .slider__text {
     font-family: 'Oswald', sans-serif;
     font-size: 54px;
