@@ -1,6 +1,5 @@
 function slider( {
     selectors,   // Object of selectors Required: slide, container.
-    slidesList,  // Array of slide objects. Required properties: imgPath, alt.
     startSlideIndex,  // Index of start slide. Default: 1.
     activateNavigationDots, // Expects true for creating navigation dots.
     activateAutoTurning,  // Expexts true for activating autoturning. Works while arrow havent touched.
@@ -8,8 +7,7 @@ function slider( {
     activateSlidesMoving, // Expects true for auto scrolling elongated imgs and scoping others.
     autoScrollSpeed, // Expects auto img scroll speed. Recomended speed: 1-5. Default: 2.
     autoScopeSpeed, //Expects auto img scope speed. Recomended speed: 1-5. Default: 2.
-    leftArrowImg,
-    rightArrowImg}) {
+}) {
 
     const bodSelectors = prepareSelectors(selectors);           // Creates a selectors object. Declares standard classes to unspecified
     class sliderItem {                                          // Creates a slider object. Expects objects of img path (required), alt (required) and text
@@ -20,27 +18,7 @@ function slider( {
             this.parent = document.querySelector(bodSelectors.innerSelector);
             this.itemClass = bodSelectors.slidesSelector.slice(1);
         }
-
-        render() {
-            const item = document.createElement('div');
-            item.classList.add(this.itemClass);
-            if(this.text) {
-                item.innerHTML = `
-                <img src=${this.imgSrc} alt=${this.alt}>
-                <div class="slider__overlay">
-                    <div class="slider__text">${this.text}</div>
-                </div>
-            `} else {
-                item.innerHTML = `
-                <img src=${this.imgSrc} alt=${this.alt}>
-            `}
-            this.parent.append(item);
-        }
     }
-    
-    slidesList.forEach(slide => {           // Creates slides from array of slides and renders it
-        new sliderItem(slide).render();
-    });
 
     const slider = document.querySelector(bodSelectors.sliderSelector),         // Inits slider
         slides = document.querySelectorAll(bodSelectors.slidesSelector),
@@ -61,8 +39,6 @@ function slider( {
     let timerTurn;
     let startingSwipeX,
         changedSwipeX;
-
-    renderArrows(leftArrowImg, rightArrowImg, arrowPrev, arrowNext);
 
     if (activateNavigationDots) {
         if (activateNavigationDots === true) {                  // Inits selected options
@@ -178,33 +154,19 @@ function slider( {
         }
     }
 
-    function renderArrows(leftUrl, rightUrl, leftContainer, rightContainer) {
-        const left = document.createElement('img'),
-        right = document.createElement('img');
-
-        left.src = leftUrl;
-        right.src = rightUrl;
-        leftContainer.append(left);
-        rightContainer.append(right);
-    }
-
     function createDots(slides, indicators, slider) {
-        const dots = document.createElement('ol');
+        const dots = document.querySelectorAll('.slider__dot');
 
-        dots.classList.add('slider__indicators');
-        slider.append(dots);
+        for (let i = 0; i < dots.length; i++) {
 
-        for (let i = 0; i < slides.length; i++) {
-            const dot = document.createElement('li');
-            dot.setAttribute('data-slide-to', i + 1);
-            dot.classList.add('slider__dot');
+            dots[i].setAttribute('data-slide-to', i + 1);
+            dots[i].classList.add('slider__dot');
 
             if ( i == 0) {
-                dot.style.opacity = 1;
+                dots[i].style.opacity = 1;
             }
-
-            dots.append(dot);
-            indicators.push(dot);
+            
+            indicators.push(dots[i]);
         }
     }
 

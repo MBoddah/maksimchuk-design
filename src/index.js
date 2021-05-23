@@ -10,18 +10,9 @@ const selectors = {
     container: '.slider',
 };
 
-const slidesList = [
-    {imgSrc:'img/arts/slides/cyberpunk.jpg', alt: 'cyberpunk', text: ' '},
-    {imgSrc:'img/arts/slides/skull.jpg', alt: 'skull', text: ' '},
-    {imgSrc:'img/arts/slides/wings.png', alt: 'wings', text: ' '}
-]
-
 menu();
 slider({
     selectors, 
-    slidesList,
-    leftArrowImg: 'img/arrow-left.png',
-    rightArrowImg: 'img/arrow-right.png',
     activateNavigationDots: true,
     activateSlidesMoving: true,
     autoScrollSpeed: 4,
