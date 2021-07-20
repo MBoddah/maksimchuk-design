@@ -293,7 +293,7 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  margin: 5% auto;
+  margin: auto;
   overflow-x: hidden;
   background-color: #eee; }
   .form__transparent {
@@ -405,8 +405,7 @@ body {
   justify-items: center;
   width: 100%;
   position: relative;
-  padding: 0 10%;
-  margin-top: 5%; }
+  padding: 5% 10%; }
   .socials__wrapper {
     width: 100%;
     display: flex;
@@ -432,6 +431,36 @@ body {
     text-decoration: none; }
     .socials__link:hover {
       color: #d62e2e; }
+
+.devinfo {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: flex-end;
+  text-align: right;
+  width: 100%;
+  position: relative;
+  padding: 2%;
+  background-color: black; }
+  .devinfo__rights {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #111;
+    color: #fff; }
+  .devinfo__tag {
+    font-family: 'Oswald Light', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    color: #111;
+    color: #999; }
+  .devinfo__email {
+    font-family: 'Oswald Light', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    color: #111;
+    color: #999;
+    text-decoration: none; }
 
 .modal {
   position: fixed;
@@ -474,19 +503,6 @@ body {
     .modal__close:hover {
       background-color: rgba(255, 255, 255, 0.3);
       opacity: .7; }
-
-footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 5%;
-  padding: 2%;
-  position: relative;
-  background-color: black;
-  font-family: 'Oswald Light', sans-serif;
-  font-size: 18px;
-  font-weight: 200;
-  color: #111;
-  color: #fff; }
 
 ._hide {
   display: none; }
@@ -621,7 +637,27 @@ footer {
     font-family: 'Oswald Light', sans-serif;
     font-size: 36px;
     font-weight: 200;
-    color: #111; } }
+    color: #111; }
+  .devinfo {
+    padding: 5%; }
+    .devinfo__rights {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #111;
+      color: #fff; }
+    .devinfo__tag {
+      font-family: 'Oswald Light', sans-serif;
+      font-size: 12px;
+      font-weight: 100;
+      color: #111;
+      color: #999; }
+    .devinfo__email {
+      font-family: 'Oswald Light', sans-serif;
+      font-size: 12px;
+      font-weight: 100;
+      color: #111;
+      color: #999; } }
 
 @media (max-width: 550px) {
   .header__wrapper {
@@ -713,7 +749,27 @@ footer {
     font-family: 'Oswald Light', sans-serif;
     font-size: 24px;
     font-weight: 200;
-    color: #111; } }
+    color: #111; }
+  .devinfo {
+    padding: 5%; }
+    .devinfo__rights {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      color: #111;
+      color: #fff; }
+    .devinfo__tag {
+      font-family: 'Oswald Light', sans-serif;
+      font-size: 8px;
+      font-weight: 100;
+      color: #111;
+      color: #999; }
+    .devinfo__email {
+      font-family: 'Oswald Light', sans-serif;
+      font-size: 8px;
+      font-weight: 100;
+      color: #111;
+      color: #999; } }
 
 @media (max-width: 405px) {
   .logo img {

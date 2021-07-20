@@ -27,7 +27,7 @@ function slider( {
         arrowPrev = document.querySelector(bodSelectors.prevArrowSelector) || createSliderElement(slidesWrapper, bodSelectors.prevArrowSelector),
         arrowNext = document.querySelector(bodSelectors.nextArrowSelector) || createSliderElement(slidesWrapper , bodSelectors.nextArrowSelector);
 
-        sliderInner.style.width = slides.length * 100 + '%';        
+    sliderInner.style.width = slides.length * 100 + '%';        
     sliderInner.style.display = 'flex';
     sliderInner.style.transition = '.5s all';
     slidesWrapper.style.overflow = 'hidden';

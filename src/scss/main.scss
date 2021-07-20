@@ -366,7 +366,7 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    margin: 5% auto;
+    margin: auto;
     overflow-x: hidden;
     background-color: #eee;
 
@@ -490,8 +490,7 @@ body {
     justify-items: center;
     width: 100%;
     position: relative; 
-    padding: 0 10%;
-    margin-top: 5%;;
+    padding: 5% 10%;
     &__wrapper{
         width: 100%;
         display: flex;
@@ -519,6 +518,34 @@ body {
         &:hover {
             color: rgb(214, 46, 46);
         }
+    }
+}
+
+.devinfo{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: flex-end;
+    text-align: right;
+    width: 100%;
+    position: relative; 
+    padding: 2%;
+    background-color: black;
+
+    &__rights{
+        @include regular-font(20px, 400);
+        color: #fff;
+    }
+
+    &__tag{
+        @include light-font(16px, 100);
+        color: #999;
+    }
+
+    &__email{
+        @include light-font(16px, 100);
+        color: #999;
+        text-decoration: none;
     }
 }
 
@@ -574,16 +601,7 @@ body {
     }
 }
 
-footer{
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-    padding: 2%;
-    position: relative;
-    background-color: black;
-    @include light-font(18px, 200);
-    color: #fff;
-}
+
 
 ._hide {
     display: none;
@@ -762,6 +780,24 @@ footer{
             @include light-font(36px, 200);
         }
     }
+
+    .devinfo{
+        padding: 5%;
+        &__rights{
+            @include regular-font(16px, 400);
+            color: #fff;
+        }
+    
+        &__tag{
+            @include light-font(12px, 100);
+            color: #999;
+        }
+    
+        &__email{
+            @include light-font(12px, 100);
+            color: #999;
+        }
+    }
 }
 
 
@@ -875,6 +911,24 @@ footer{
         }
         &__link {
             @include light-font(24px, 200);
+        }
+    }
+
+    .devinfo{
+        padding: 5%;
+        &__rights{
+            @include regular-font(12px, 400);
+            color: #fff;
+        }
+    
+        &__tag{
+            @include light-font(8px, 100);
+            color: #999;
+        }
+    
+        &__email{
+            @include light-font(8px, 100);
+            color: #999;
         }
     }
 }
